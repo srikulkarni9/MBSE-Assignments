@@ -22,6 +22,7 @@ the state changes.
 | 2026-11-18 20:41 CET | Local commit `bed4efd` "Add rights notice, repo verification script and recorded verification run": `## Rights notice` section added to `README.md`; re-runnable verification script `misc/verify_repo.sh` added; first recorded verification run documented in `misc/VERIFICATION.md` — no push | git log (commit metadata); `misc/VERIFICATION.md` | high |
 | 2026-11-18 (evening) | Patch round R1 — documentation fixes from the internal primary review, one commit: A4 PDF characterized as the group's own submission/analysis document (README status, `misc/INVENTORY.md` §1 and §4 D11, Open section of the A4 `assignment.md`); A4 status sharpened to "Delivered (analysis PDF) — model file still missing"; AI-disclaimer scope of the A3 PDF widened from the 2027 column to the whole document (README, `misc/INVENTORY.md` §3.3, A3 `assignment.md`); verification cross-references added (README layout, `AGENTS.md` path map); inventory decisions D3/D6/D9/D10/D11 added; Downloads-folder state update recorded; re-verification run appended to `misc/VERIFICATION.md` — no push | `4739c9d`; `misc/VERIFICATION.md` run 2 | high |
 | 2026-11-18 (evening) | Patch round R2 — truthfulness fix in `misc/INVENTORY.md`: gap §3.1 rewritten (the A4 model folder contains only the placeholder `model/README.md`, the model file itself is missing; the stale "currently empty"/"Phase 2" wording removed) and decision D2 freed of its stale phase reference; limited precision polish in README.md (verification scope, A3/A4 provenance wording in the status table, intro claim limited to repo claims) and AGENTS.md (redundant path prefix in the misc/ row); re-verification run 3 appended to `misc/VERIFICATION.md` — no push | parent: `4739c9d`; this commit = `git log --oneline -1`; `misc/VERIFICATION.md` run 3 | high |
+| 2026-11-18 (evening) | Patch round R3 — robust-status fix: the stale hard ahead-count written in R1 (left stale when R2 updated only the section heading) removed from the Current-status Git bullet and replaced by a robust formulation that stays true after every future commit ("several commits" plus the live counter command `git rev-list --count origin/main..HEAD`, snapshot 6 as of commit `3ac349c`); section heading extended with the R3 fix; re-verification run 4 appended to `misc/VERIFICATION.md` — no push | parent: `3ac349c`; this commit = `git log --oneline -1`; `misc/VERIFICATION.md` run 4 | high |
 
 ## Assumption on record (not a fact)
 
@@ -33,7 +34,7 @@ the state changes.
   confirmed by the group. Source: `misc/INVENTORY.md` §3 (gaps 1–3);
   user message of 2026-11-18.
 
-## Current status (as of 2026-11-18, after commit 4739c9d and the R1 documentation patch + R2 truthfulness fix)
+## Current status (as of 2026-11-18, after commit 4739c9d and the R1 documentation patch + R2 truthfulness fix + R3 robust-status fix)
 
 - **A3:** analysis PDF is in the repo; whether it is the delivered group
   result or provided material is not provable from the file alone — both
@@ -46,9 +47,10 @@ the state changes.
   `assignments/a4_problem_understanding_and_model/model/README.md`.
 - **A1/A2/A5:** no artifacts on this machine; no folders invented
   (`misc/INVENTORY.md` §4 D2).
-- **Git:** local `main` is ahead of `origin/main` (`6fffee1`) by five
-  commits (as of this patch commit); **no push performed** — the
-  repository owner pushes personally.
+- **Git:** local `main` is ahead of `origin/main` (`6fffee1`) by several
+  commits; exact count: `git rev-list --count origin/main..HEAD`
+  (6 as of commit `3ac349c`); **no push performed** — the repository
+  owner pushes personally.
 - **Open gaps:** see `misc/INVENTORY.md` §3 and the Open sections of the
   two `assignment.md` files. The documented repo state can be re-verified
   at any time with `bash misc/verify_repo.sh`

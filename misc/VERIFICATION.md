@@ -74,6 +74,19 @@ actual grep pattern lives in `misc/verify_repo.sh`.
   (`README.md`, `AGENTS.md`, `HISTORY.md`, `misc/INVENTORY.md`, this
   file); `misc/verify_repo.sh` itself was **not** modified.
 
+## Run 4 — re-verification after the R3 robust-status fix (2026-11-18)
+
+- **Recorded run:** 2026-11-18 (local), executed directly after the R3
+  robust-status-fix commit — the commit that carries this entry (parent
+  commit: `3ac349c`; the commit's own hash is recorded as
+  `git log --oneline -1` at read time, because a file cannot contain the
+  hash of the commit that contains it)
+- **Check set:** identical to the Run 1 table above (same commands)
+- **Result:** 9/9 checks PASS, script exit code 0
+- **Scope note:** the R3 patch touched documentation text only
+  (`HISTORY.md` and `misc/VERIFICATION.md` — this file, both plain
+  Markdown); `misc/verify_repo.sh` itself was **not** modified.
+
 ## Intentionally open gap (documented, NOT a failure)
 
 The A4 SysML model file `MBSE_A4_Never_Settlers_model.sysml` is **not**
