@@ -1,0 +1,10 @@
+# OS / editor / scratch artifacts only.
+# NOTE: *.pdf, *.md and *.sysml are intentionally NOT ignored here —
+# assignment PDFs, documentation and SysML model files must stay tracked
+# in Git (Assignment A4 explicitly requires keeping model files in Git
+# for history and diffs).
+.DS_Store
+Thumbs.db
+*.swp
+*~
+__pycache__/
