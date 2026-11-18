@@ -17,7 +17,7 @@ README — read in this order:
 | `assignments/<id>/model/` | SysML model files of that assignment (textual SysML v2, `.sysml`). |
 | `assignments/<id>/assignment.md` | Contract of record for the assignment: Required / Delivered / Open / Sources, each line marked high / medium / low confidence. |
 | `course_material/scripts/` | Lecture scripts `MBSE4B_0_Course-Intro.pdf` … `MBSE4B_5_Architecting+Modelling.pdf`. |
-| `misc/` | Cross-assignment references (`NASA_MBSE_a5_Cheat_Sheet1.pdf`, `NASA_MBSE_a5_human_ai.pdf`, `NASA_Systems_Modeling_Handbook_Kurzfassung.pdf`) and `misc/INVENTORY.md` (provenance & decision log). |
+| `misc/` | Cross-assignment references (`NASA_MBSE_a5_Cheat_Sheet1.pdf`, `NASA_MBSE_a5_human_ai.pdf`, `NASA_Systems_Modeling_Handbook_Kurzfassung.pdf`) and `INVENTORY.md` (provenance & decision log). |
 | `misc/VERIFICATION.md` | Recorded verification runs — the documented results of `verify_repo.sh` executions. |
 | `misc/verify_repo.sh` | Re-runnable integrity checks for the documented repo state. Agents: run `bash misc/verify_repo.sh` from any working directory to re-verify the state (9 checks; exit code 0 = all pass). |
 | `HISTORY.md` | Chronology of the group's work; add a dated entry for every state change. |

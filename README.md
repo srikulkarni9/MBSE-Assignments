@@ -4,7 +4,7 @@ Central collection of files and group-assignment results for the module
 **MBSE4B — Model-Based Systems Engineering**. The repository is maintained
 so that both humans and AI agents can use it as the single point of
 reference: every group assignment with actual artifacts has one folder,
-every claim in this documentation is backed by a file in the repo, and
+every claim about the repository's contents and history is backed by a file in the repo, and
 every gap is documented instead of invented (assignments without artifacts
 on this machine — A1/A2/A5 — deliberately get no folder; see the note below
 the layout tree and `misc/INVENTORY.md` §4 D2).
@@ -29,8 +29,8 @@ the layout tree and `misc/INVENTORY.md` §4 D2).
 
 | Item | State |
 |---|---|
-| A3 — SEM rule-change analysis | **Delivered** — analysis PDF in `assignments/a3_sem_rule_change_analysis/` |
-| A4 — Problem understanding & model | **Delivered** (analysis PDF) in `assignments/a4_problem_understanding_and_model/` — the SysML model file is still missing |
+| A3 — SEM rule-change analysis | **Delivered** (analysis PDF; group authorship not provable — gap #4) in `assignments/a3_sem_rule_change_analysis/` |
+| A4 — Problem understanding & model | **Delivered** (analysis PDF; medium confidence — `misc/INVENTORY.md` §4 D11) in `assignments/a4_problem_understanding_and_model/` — the SysML model file is still missing |
 | A4 — SysML model file | **Missing** — `MBSE_A4_Never_Settlers_model.sysml` was never exported; see `assignments/a4_problem_understanding_and_model/model/README.md` |
 
 ## Repository layout
@@ -66,7 +66,9 @@ out of scope by decision of the team). Folders exist only for assignments
 with actual artifacts — no empty folders are invented for assignments
 without evidence (see `misc/INVENTORY.md` §4 D2).
 
-Agents can re-verify the documented repo state at any time with
+Agents can re-verify the documented repo state at any time until the
+repository state changes (the documented scope of the checks, including
+by-design future FAIL triggers, lives in `misc/VERIFICATION.md`) with
 `bash misc/verify_repo.sh` (9 checks; exit code 0 = all pass). The
 recorded verification runs live in `misc/VERIFICATION.md`.
 

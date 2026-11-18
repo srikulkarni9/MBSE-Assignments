@@ -75,9 +75,9 @@ root to `assignments/a3_sem_rule_change_analysis/`. Git blob SHA
    re-checked 2026-11-18). The SysML model referenced in
    `MBSE_A4_Never_Settlers.pdf` (`MBSE_A4_Never_Settlers_model.sysml`,
    Part A) was never exported — it presumably existed only inside kotar.app.
-   Therefore `assignments/a4_problem_understanding_and_model/model/` is
-   currently empty; export instructions follow in Phase 2
-   (`model/README.md`).
+   Therefore `assignments/a4_problem_understanding_and_model/model/`
+   currently contains only the placeholder `model/README.md` — the model
+   file itself is missing; export instructions: `model/README.md`.
 2. **No separate PDF with the Shell Eco Marathon rulebook exists.**
    The rule-change analysis (Assignment A3) has to work from the A3 PDF and
    its cited sources; no dedicated rulebook document was found or downloaded.
@@ -97,7 +97,7 @@ root to `assignments/a3_sem_rule_change_analysis/`. Git blob SHA
 - **D2 — Only A3 and A4 get assignment subfolders.** Those are the group
   assignments with actual artifacts (evidence). A1/A2/A5 have no artifacts
   on this machine; no folders are invented for them — they are recorded as
-  gaps in README/HISTORY instead (Phase 2).
+  gaps in README/HISTORY instead (see README/HISTORY gaps).
 - **D3 — No false statements: gaps are documented, not invented.** Wherever
   evidence is missing, the documentation records the gap with its
   confidence level instead of filling it with plausible-sounding content
