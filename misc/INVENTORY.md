@@ -70,6 +70,13 @@ root to `assignments/a3_sem_rule_change_analysis/`. Git blob SHA
 
 ## 3. Documented gaps (honest state — nothing invented, nothing backfilled)
 
+The numbered entries below record the initial inventory. In the working tree
+on 2026-11-18, the user supplied an A3 textual model export and a 2027 Chapter I
+PDF. The A6 report and model use these inputs and the official 2027 Chapter
+IV. The original A4 model file remains outstanding. The A6 category, energy
+class, event details and verification gaps are listed in
+[the A6 contract](../assignments/a6_system_model_v2/assignment.md#open).
+
 1. **No SysML model file exists anywhere on this machine.** No `.sysml`,
    `.sysmlx`, `.xmi` or `.kerml` file was found (verified at startup gate,
    re-checked 2026-11-18). The SysML model referenced in

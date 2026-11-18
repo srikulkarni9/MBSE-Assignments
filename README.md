@@ -32,6 +32,7 @@ the layout tree and `misc/INVENTORY.md` §4 D2).
 | A3 — SEM rule-change analysis | **Delivered** (analysis PDF; group authorship not provable — gap #4) in `assignments/a3_sem_rule_change_analysis/` |
 | A4 — Problem understanding & model | **Delivered** (analysis PDF; medium confidence — `misc/INVENTORY.md` §4 D11) in `assignments/a4_problem_understanding_and_model/` — the SysML model file is still missing |
 | A4 — SysML model file | **Missing** — `MBSE_A4_Never_Settlers_model.sysml` was never exported; see `assignments/a4_problem_understanding_and_model/model/README.md` |
+| A6 — System model v2 | **Prepared for submission** — [report and SysML v2 model](assignments/a6_system_model_v2/assignment.md#delivered) |
 
 ## Repository layout
 
@@ -44,11 +45,16 @@ the layout tree and `misc/INVENTORY.md` §4 D2).
 │   ├── a3_sem_rule_change_analysis/
 │   │   ├── MBSE_A3_Never_Settlers_SEM_Analysis.pdf
 │   │   └── assignment.md      ← Required / Delivered / Open / Sources
-│   └── a4_problem_understanding_and_model/
-│       ├── MBSE_A4_Never_Settlers.pdf
-│       ├── assignment.md      ← Required / Delivered / Open / Sources
+│   ├── a4_problem_understanding_and_model/
+│   │   ├── MBSE_A4_Never_Settlers.pdf
+│   │   ├── assignment.md      ← Required / Delivered / Open / Sources
+│   │   └── model/
+│   │       └── README.md      ← placeholder + export guide for the missing .sysml file
+│   └── a6_system_model_v2/
+│       ├── MBSE_A6_Never_Settlers.pdf
+│       ├── assignment.md
 │       └── model/
-│           └── README.md      ← placeholder + export guide for the missing .sysml file
+│           └── MBSE_A6_Never_Settlers.sysml
 ├── course_material/
 │   └── scripts/               ← lecture scripts MBSE4B_0 … MBSE4B_5
 ├── misc/
@@ -99,9 +105,9 @@ repo) as orientation. Two further NASA references live next to it in
 1. The A4 SysML model file `MBSE_A4_Never_Settlers_model.sysml` is not in
    the repo — never exported; presumably it exists only inside kotar.app
    (`misc/INVENTORY.md` §3.1).
-2. No dedicated PDF of the Shell Eco-marathon rulebook is in the repo; the
-   rule analysis works from the A3 PDF and the sources it cites
-   (`misc/INVENTORY.md` §3.2).
+2. A6 uses the local 2027 Chapter I rulebook and the official 2027 Chapter IV.
+   The event-specific Chapter II parameters remain open. See
+   [the A6 contract](assignments/a6_system_model_v2/assignment.md#open).
 3. The whole A3 PDF is AI-generated: the disclaimer "AI generated content
    using Gemini AI" is printed in the PDF directly next to the prompt line
    ("Comparison of rule/regulation changes between 2025 Vs 2026 Vs 2027"),

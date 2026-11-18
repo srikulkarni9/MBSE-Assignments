@@ -23,6 +23,8 @@ the state changes.
 | 2026-11-18 (evening) | Patch round R1 — documentation fixes from the internal primary review, one commit: A4 PDF characterized as the group's own submission/analysis document (README status, `misc/INVENTORY.md` §1 and §4 D11, Open section of the A4 `assignment.md`); A4 status sharpened to "Delivered (analysis PDF) — model file still missing"; AI-disclaimer scope of the A3 PDF widened from the 2027 column to the whole document (README, `misc/INVENTORY.md` §3.3, A3 `assignment.md`); verification cross-references added (README layout, `AGENTS.md` path map); inventory decisions D3/D6/D9/D10/D11 added; Downloads-folder state update recorded; re-verification run appended to `misc/VERIFICATION.md` — no push | `4739c9d`; `misc/VERIFICATION.md` run 2 | high |
 | 2026-11-18 (evening) | Patch round R2 — truthfulness fix in `misc/INVENTORY.md`: gap §3.1 rewritten (the A4 model folder contains only the placeholder `model/README.md`, the model file itself is missing; the stale "currently empty"/"Phase 2" wording removed) and decision D2 freed of its stale phase reference; limited precision polish in README.md (verification scope, A3/A4 provenance wording in the status table, intro claim limited to repo claims) and AGENTS.md (redundant path prefix in the misc/ row); re-verification run 3 appended to `misc/VERIFICATION.md` — no push | parent: `4739c9d`; this commit = `git log --oneline -1`; `misc/VERIFICATION.md` run 3 | high |
 | 2026-11-18 (evening) | Patch round R3 — robust-status fix: the stale hard ahead-count written in R1 (left stale when R2 updated only the section heading) removed from the Current-status Git bullet and replaced by a robust formulation that stays true after every future commit ("several commits" plus the live counter command `git rev-list --count origin/main..HEAD`, snapshot 6 as of commit `3ac349c`); section heading extended with the R3 fix; re-verification run 4 appended to `misc/VERIFICATION.md` — no push | parent: `3ac349c`; this commit = `git log --oneline -1`; `misc/VERIFICATION.md` run 4 | high |
+| 2026-11-18 | Created the A6 folder and documented the team task, submission instructions and existing project inputs. | [A6 assignment brief](assignments/a6_system_model_v2/assignment.md), based on Session 5, slides 52 and 54 | high |
+| 2026-11-18 | Prepared the A6 submission document and SysML v2 export, including the common working baseline, external exchanges and three functional flows. Official 2027 Chapter IV informs the ADC baseline. | [A6 report](assignments/a6_system_model_v2/MBSE_A6_Never_Settlers.pdf), [A6 model](assignments/a6_system_model_v2/model/MBSE_A6_Never_Settlers.sysml) | high |
 
 ## Assumption on record (not a fact)
 
@@ -45,6 +47,8 @@ the state changes.
   submission/analysis document (reading D11, medium confidence); the SysML
   model file is **missing** (never exported) — export guide in
   `assignments/a4_problem_understanding_and_model/model/README.md`.
+- **A6:** [submission document and SysML v2 model](assignments/a6_system_model_v2/assignment.md#delivered)
+  prepared for team submission.
 - **A1/A2/A5:** no artifacts on this machine; no folders invented
   (`misc/INVENTORY.md` §4 D2).
 - **Git:** local `main` is ahead of `origin/main` (`6fffee1`) by several
