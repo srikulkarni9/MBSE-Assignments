@@ -19,6 +19,8 @@ the state changes.
 | 2026-11-18 20:29 CET | Local commit `c464124`: empty `test.txt` removed (pre-existing deletion by the repository owner) | git log | high |
 | 2026-11-18 20:30 CET | Local commit `92e94b5`: repository restructured — A3 PDF moved via `git mv` into `assignments/a3_sem_rule_change_analysis/` (history traceable to `49589aa`), A4 PDF copied into `assignments/a4_problem_understanding_and_model/`, 6 course scripts (from the ZIP, md5-verified) into `course_material/scripts/`, 3 NASA references + `misc/INVENTORY.md` into `misc/`, `.gitignore` added | git log; `misc/INVENTORY.md` | high |
 | 2026-11-18 (evening) | Phase-2 documentation added in one commit: `README.md`, `AGENTS.md`, `HISTORY.md` (this file), `assignments/a3_sem_rule_change_analysis/assignment.md`, `assignments/a4_problem_understanding_and_model/assignment.md`, `assignments/a4_problem_understanding_and_model/model/README.md` — no push | this commit | high |
+| 2026-11-18 20:41 CET | Local commit `bed4efd` "Add rights notice, repo verification script and recorded verification run": `## Rights notice` section added to `README.md`; re-runnable verification script `misc/verify_repo.sh` added; first recorded verification run documented in `misc/VERIFICATION.md` — no push | git log (commit metadata); `misc/VERIFICATION.md` | high |
+| 2026-11-18 (evening) | Patch round R1 — documentation fixes from the internal primary review, one commit: A4 PDF characterized as the group's own submission/analysis document (README status, `misc/INVENTORY.md` §1 and §4 D11, Open section of the A4 `assignment.md`); A4 status sharpened to "Delivered (analysis PDF) — model file still missing"; AI-disclaimer scope of the A3 PDF widened from the 2027 column to the whole document (README, `misc/INVENTORY.md` §3.3, A3 `assignment.md`); verification cross-references added (README layout, `AGENTS.md` path map); inventory decisions D3/D6/D9/D10/D11 added; Downloads-folder state update recorded; re-verification run appended to `misc/VERIFICATION.md` — no push | this commit; `misc/VERIFICATION.md` run 2 | high |
 
 ## Assumption on record (not a fact)
 
@@ -30,17 +32,23 @@ the state changes.
   confirmed by the group. Source: `misc/INVENTORY.md` §3 (gaps 1–3);
   user message of 2026-11-18.
 
-## Current status (as of 2026-11-18, after the Phase-2 documentation commit)
+## Current status (as of 2026-11-18, after commit bed4efd and the R1 documentation patch)
 
 - **A3:** analysis PDF is in the repo; whether it is the delivered group
   result or provided material is not provable from the file alone — both
   readings documented in `assignments/a3_sem_rule_change_analysis/assignment.md`.
-- **A4:** analysis PDF is in the repo; the SysML model file is **missing**
-  (never exported) — export guide in
+  The whole PDF is AI-generated (disclaimer next to the prompt line) and is
+  treated as an unverified draft.
+- **A4:** analysis PDF is in the repo and documented as the group's own
+  submission/analysis document (reading D11, medium confidence); the SysML
+  model file is **missing** (never exported) — export guide in
   `assignments/a4_problem_understanding_and_model/model/README.md`.
 - **A1/A2/A5:** no artifacts on this machine; no folders invented
   (`misc/INVENTORY.md` §4 D2).
-- **Git:** local `main` is ahead of `origin/main` (`6fffee1`) by several
-  commits; **no push performed** — the repository owner pushes personally.
+- **Git:** local `main` is ahead of `origin/main` (`6fffee1`) by five
+  commits (as of this patch commit); **no push performed** — the
+  repository owner pushes personally.
 - **Open gaps:** see `misc/INVENTORY.md` §3 and the Open sections of the
-  two `assignment.md` files.
+  two `assignment.md` files. The documented repo state can be re-verified
+  at any time with `bash misc/verify_repo.sh`
+  (`misc/VERIFICATION.md`).

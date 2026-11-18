@@ -3,9 +3,11 @@
 Central collection of files and group-assignment results for the module
 **MBSE4B — Model-Based Systems Engineering**. The repository is maintained
 so that both humans and AI agents can use it as the single point of
-reference: every assignment has one folder, every claim in this
-documentation is backed by a file in the repo, and every gap is documented
-instead of invented.
+reference: every group assignment with actual artifacts has one folder,
+every claim in this documentation is backed by a file in the repo, and
+every gap is documented instead of invented (assignments without artifacts
+on this machine — A1/A2/A5 — deliberately get no folder; see the note below
+the layout tree and `misc/INVENTORY.md` §4 D2).
 
 - **Remote:** https://github.com/srikulkarni9/MBSE-Assignments
   (only the repository owner pushes; all local work stays local until then).
@@ -28,7 +30,7 @@ instead of invented.
 | Item | State |
 |---|---|
 | A3 — SEM rule-change analysis | **Delivered** — analysis PDF in `assignments/a3_sem_rule_change_analysis/` |
-| A4 — Problem understanding & model | **Documented** — analysis PDF in `assignments/a4_problem_understanding_and_model/` |
+| A4 — Problem understanding & model | **Delivered** (analysis PDF) in `assignments/a4_problem_understanding_and_model/` — the SysML model file is still missing |
 | A4 — SysML model file | **Missing** — `MBSE_A4_Never_Settlers_model.sysml` was never exported; see `assignments/a4_problem_understanding_and_model/model/README.md` |
 
 ## Repository layout
@@ -51,6 +53,8 @@ instead of invented.
 │   └── scripts/               ← lecture scripts MBSE4B_0 … MBSE4B_5
 ├── misc/
 │   ├── INVENTORY.md           ← provenance of every file, decisions, documented gaps
+│   ├── VERIFICATION.md        ← recorded verification runs (results of verify_repo.sh)
+│   ├── verify_repo.sh         ← re-runnable integrity checks — agents: `bash misc/verify_repo.sh`
 │   ├── NASA_MBSE_a5_Cheat_Sheet1.pdf
 │   ├── NASA_MBSE_a5_human_ai.pdf
 │   └── NASA_Systems_Modeling_Handbook_Kurzfassung.pdf
@@ -61,6 +65,10 @@ Only **group assignments** get a folder here (individual assignments are
 out of scope by decision of the team). Folders exist only for assignments
 with actual artifacts — no empty folders are invented for assignments
 without evidence (see `misc/INVENTORY.md` §4 D2).
+
+Agents can re-verify the documented repo state at any time with
+`bash misc/verify_repo.sh` (9 checks; exit code 0 = all pass). The
+recorded verification runs live in `misc/VERIFICATION.md`.
 
 ## Tooling setup of the group
 
@@ -88,18 +96,22 @@ repo) as orientation. Two further NASA references live next to it in
 
 1. The A4 SysML model file `MBSE_A4_Never_Settlers_model.sysml` is not in
    the repo — never exported; presumably it exists only inside kotar.app
-   (`INVENTORY.md` §3.1).
+   (`misc/INVENTORY.md` §3.1).
 2. No dedicated PDF of the Shell Eco-marathon rulebook is in the repo; the
    rule analysis works from the A3 PDF and the sources it cites
-   (`INVENTORY.md` §3.2).
-3. The 2027-rules column in the A3 PDF is AI-generated (disclaimer printed
-   in the PDF itself) — treat it as an **unverified baseline**, not as
-   authoritative rule text (`INVENTORY.md` §3.3).
+   (`misc/INVENTORY.md` §3.2).
+3. The whole A3 PDF is AI-generated: the disclaimer "AI generated content
+   using Gemini AI" is printed in the PDF directly next to the prompt line
+   ("Comparison of rule/regulation changes between 2025 Vs 2026 Vs 2027"),
+   so it covers the entire document — the 2025/2026 columns included — and
+   not only the 2027 column. Treat the whole A3 document as an
+   **unverified draft**, not as authoritative rule text
+   (`misc/INVENTORY.md` §3.3).
 4. It is not provable from the file alone whether the A3 PDF is the group's
    delivered result or provided material — both readings are documented
    with evidence in `assignments/a3_sem_rule_change_analysis/assignment.md`.
 5. No folders for A1/A2/A5: no artifacts exist on this machine, so none are
-   invented (`INVENTORY.md` §4 D2).
+   invented (`misc/INVENTORY.md` §4 D2).
 
 ## Conventions
 

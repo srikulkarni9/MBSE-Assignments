@@ -63,6 +63,16 @@ is reconstructed from the delivered PDF's own title and structure.)*
 
 ## Open
 
+- **The role of the PDF in this folder is an interpretation, not a proven
+  fact.** The reading adopted in this file — the PDF is the **group's own
+  A4 submission/analysis document** — has *medium* confidence. Evidence
+  for it: the PDF is an analysis product with the sections "3. Key steps
+  we took" and "4. Where we are uncertain" and a "Model mapping
+  (Session 3)" note; it contains no task list, no deadlines and no grading
+  criteria; the author field is "Un-named". The **lecturer's original A4
+  task sheet is not in the repo** — its location is unknown. *(medium —
+  interpretation; decision and evidence recorded in `misc/INVENTORY.md`
+  §4 D11)*
 - **U-1 (High risk) — 2027 Chapter IV not read.** All ADC-specific
   requirements use the 2026 text as baseline and carry the status
   "Baseline-2026"; values, sub-clauses or numbering may differ. Action per

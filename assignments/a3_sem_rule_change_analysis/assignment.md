@@ -52,9 +52,12 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
      qualification (70 % on-track efficiency + 30 % off-track awards for
      SEM Poland 2026 slots; 2027 fully integrated global structure).
 - The PDF carries the disclaimer **"AI generated content using Gemini
-  AI"** — the 2027 column is therefore an **unverified baseline**, not
-  authoritative rule text. *(high — printed in the PDF itself; see also
-  `misc/INVENTORY.md` §3.3)*
+  AI"** — printed directly next to the prompt line ("Comparison of
+  rule/regulation changes between 2025 Vs 2026 Vs 2027"), so the
+  disclaimer covers the **whole document** (2025/2026/2027 contents
+  alike), not only the 2027 column; the entire A3 document is an
+  **unverified draft**, not authoritative rule text. *(high — printed in
+  the PDF itself; see also `misc/INVENTORY.md` §3.3)*
 - File metadata: created 2026-10-26 16:36 CET, author field "sridhar
   kulkarni", Microsoft Word for Microsoft 365. *(high — `pdfinfo`)*
 - Uploaded to the GitHub repository on 2026-11-16 by account srikulkarni9
@@ -89,9 +92,11 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
 - No dedicated Shell Eco-marathon rulebook PDF exists in the repo; the
   analysis had to work from the sources it cites. *(high —
   `misc/INVENTORY.md` §3.2)*
-- The 2027 column of the tables is AI-generated (disclaimer in the PDF) —
-  a real 2027 rules check is still open; matches uncertainty U-1 in the
-  A4 PDF. *(high that it is unverified)*
+- The **whole PDF** is AI-generated (disclaimer printed next to the prompt
+  line) — not only the 2027 column — so a real rules check against
+  authoritative sources is still open for all three seasons (and
+  especially 2027); matches uncertainty U-1 in the A4 PDF. *(high that it
+  is unverified)*
 
 ## Sources
 
