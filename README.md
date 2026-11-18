@@ -110,3 +110,14 @@ repo) as orientation. Two further NASA references live next to it in
 - Git: **nobody pushes except the repository owner**; no history rewriting;
   `.sysml` files are intentionally *not* ignored — model files belong in
   Git (required by the A4 change process).
+
+## Rights notice
+
+The lecture scripts and the assignment PDFs stored in this repository are
+course material of the MBSE4B module (Hochschule Trier); their copyright
+remains with the respective authors and rights holders. They are kept here
+solely for the internal use of team **never settlers**. The NASA reference
+documents serve as orientation when modelling in SysML. Before this
+repository is pushed to the public remote, the repository owner confirms
+the distribution rights for the stored material. Nothing in this section
+is legal advice.
