@@ -184,6 +184,57 @@ actual grep pattern lives in `misc/verify_repo.sh`.
   (d) block of `misc/verify_repo.sh`; no assignment deliverable, no
   README.md, no AGENTS.md, no asset and no model file was touched.
 
+## Run 7 — re-verification after the history-truthfulness and self-record fix (2026-11-19)
+
+- **Recorded run:** 2026-11-19 (local), executed directly after the
+  history-truthfulness/self-record commit — the commit that carries this
+  entry (parent commit: `2ec3bdad82d46ecee5a00b03cd8ca6e4874b48b5`; the
+  commit's own hash is `git log --oneline -1` at read time, because a file
+  cannot contain the hash of the commit that contains it).
+- **HEAD at the recorded run:** `7fc5766cff413a136511b056b7c27d8bcc0e4447`
+  (measured with `git rev-parse HEAD` after the commit was created). This
+  entry was written *after* that run, and the commit was then amended
+  (same parent; the tree gained only this entry) so that the working tree
+  ends clean — an amend changes the commit's own sha, not the measured
+  state. The sha of the commit that carries this entry is
+  `git log --oneline -1` at read time; the intermediate version stays
+  visible in the local reflog.
+- **Purpose of this round:** repair the two findings left open by the
+  review of the previous round — F-A: the two surviving present-tense
+  `origin/main` position claims in the `HISTORY.md` chronology (the
+  2026-11-18 19:37 CET row and the 2026-11-19 00:52 CET row) converted
+  to dated past tense; F-B: the missing self-record — the review-findings
+  repair round `2ec3bda` and this round added to the `HISTORY.md`
+  chronology, the Current-status heading extended, and the
+  `misc/INVENTORY.md` run/date bullet extended to name both 2026-11-19
+  repair rounds.
+- **Result:** 8/9 checks PASS — the single FAIL is (h), by design (see
+  below); script exit code 1.
+- **Measured state at that run:** `origin/main` ==
+  `cd95afa5a375acb157ec2756468bf740f5d290f6` — unchanged, nothing was
+  pushed by this session; check (i) PASS (`origin/main` is an ancestor of
+  the local `HEAD`); the local `main` is **2 commits ahead** of
+  `origin/main` (unpushed: `2ec3bda` plus this commit); the working tree
+  shows exactly one entry — the repository owner's untracked note
+  `temp.txt`.
+- **Why (h) FAILs — by design, not a defect:** the owner's untracked note
+  `temp.txt` (199 B) is deliberately left in place by this session — it is
+  not deleted, not committed and not git-ignored — so `git status
+  --porcelain` is not empty and check (h) reports FAIL (`?? temp.txt`).
+  Every other check is green, including (d) (the canonical layout is
+  intact), (e) (no absolute user-home path in any of the 7 contract
+  files), (f) (dated entries and the Current-status section) and (i) (no
+  push, fast-forward history).
+- **Check-set change since Run 6:** none — `misc/verify_repo.sh` was **not**
+  modified; still exactly 9 checks (a)–(i).
+- **Transparency note:** the script was re-run after the amend described
+  above with the identical result — 8/9 PASS, the single (h) FAIL by
+  design, exit code 1.
+- **Scope note:** this round changed documentation text only
+  (`HISTORY.md`, `misc/INVENTORY.md` and this file); `misc/verify_repo.sh`,
+  `README.md`, `AGENTS.md`, every assignment deliverable, every asset and
+  every model file were **not** touched.
+
 ## Intentionally open gap (documented, NOT a failure)
 
 The A4 SysML model file `MBSE_A4_Never_Settlers_model.sysml` is **not**

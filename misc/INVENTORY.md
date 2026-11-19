@@ -7,8 +7,10 @@ AI agents can trace every artifact back to its origin — and so that nothing
 invented ever enters the repo.
 
 - Run / date: 2026-11-18 (initial inventory) and 2026-11-19 (consolidation
-  round after the repository owner's commit `d63ce6f`), session
-  `lightning_122`, agent `lightning_122_worker_agent`
+  round after the repository owner's commit `d63ce6f`; review-findings
+  repair round `2ec3bda`; history-truthfulness and self-record round —
+  this round), session `lightning_122`, agent
+  `lightning_122_worker_agent`
 - Working tree: `/home/edgar/vs_code/MBSE-Assignments` (branch `main`)
 - Originals outside the repo (in `~/Downloads` and in
   `~/vs_code/infotechnik/module/mbse/`) were **never modified** — only read/copied.
