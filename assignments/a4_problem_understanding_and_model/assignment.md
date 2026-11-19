@@ -98,7 +98,7 @@ is reconstructed from the delivered PDF's own title and structure.)*
   in section 1 of the PDF ("Model text: …, Part A"), does not exist in the
   repo — never exported; the working assumption is that it exists only
   inside kotar.app (assumption, not proven). As of 2026-11-19 the A4 model
-  has not been created or exported yet and is absent from the repository;
+  has not been exported into the repository and is absent from the repository;
   the machine-wide scan claim of 2026-11-18 ("no `.sysml`/`.sysmlx`/`.xmi`/
   `.kerml` file exists anywhere on this machine") is superseded — the
   repository does contain the A3 model

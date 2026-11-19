@@ -163,15 +163,22 @@ class, event details and verification gaps are listed in
   requires keeping model files in Git for history and diffs.
 - **D8 — No push by this session; the owner performs the push.** The
   repository owner pushed commit `d63ce6f` ("initial folder structure &
-  assignment 6", 2026-11-19 00:52 CET) themselves, so `origin/main` is
-  `d63ce6fb838bcff8df436a459b47196dd044306f`. This session never pushes and
-  never rewrites history.
-- **D9 — Commit author convention.** Every commit executed by this session
-  uses the author and committer identity
+  assignment 6", 2026-11-19 00:52 CET) themselves and later also pushed the
+  session's consolidation commit `cd95afa` themselves (2026-11-19 02:32:42
+  CET; evidence: raw remote reflog + the owner's note `temp.txt`).
+  `origin/main` is therefore an ancestor of the local `HEAD`; this session
+  never pushes and never rewrites history.
+- **D9 — Commit author convention.** The 2026-11-18 session commits
+  (`c464124`, `92e94b5`, `d4614d0`, `bed4efd`, `4739c9d`, `3ac349c`,
+  `b2dd5aa`) used the author and committer identity
   `lightning_122_worker_agent <166285592+EdiDorner@users.noreply.github.com>`
   (template_session_agent convention), so the Git history shows who
   executed what; the repository owner's own commits keep their original
-  identity (see `49589aa`).
+  identity (see `49589aa`). From the consolidation commit `cd95afa` onward
+  the session deliberately uses the distinct identity
+  `lightning_122_worker_agent <lightning_122_worker_agent@localhost>`, so
+  that agent commits are clearly distinguishable from the owner's commits
+  in `git log`.
 - **D10 — Rights notice.** The rights situation of the adopted course
   material is addressed in the `## Rights notice` section of `README.md`
   (added in commit `bed4efd`): the material is kept for the internal use

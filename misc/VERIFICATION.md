@@ -131,6 +131,59 @@ actual grep pattern lives in `misc/verify_repo.sh`.
   the Phase-2 verifier repair together; `misc/verify_repo.sh` was modified
   in the (d) and (i) checks only.
 
+## Run 6 — re-verification after the documentation-truth repair (2026-11-19)
+
+- **Recorded run:** 2026-11-19 (local), executed directly after the
+  documentation-repair commit — the commit that carries this entry (parent
+  commit: `cd95afa5a375acb157ec2756468bf740f5d290f6`; the commit's own
+  hash is `git log --oneline -1` at read time, because a file cannot
+  contain the hash of the commit that contains it).
+- **HEAD at the recorded run:** `ff2b395c99de1c0fe5ad3cb3401ee49b6a00252d`
+  (measured with `git rev-parse HEAD` after the repair commit was
+  created). This entry was written *after* that run, and the commit was
+  then amended (same parent; the tree gained only this entry and a
+  paragraph re-wrap in the A4 model placeholder README — no word added,
+  removed or changed) so that the working tree ends clean — an amend
+  changes the commit's own sha, not the measured state. The sha of the
+  commit that carries this entry is `git log --oneline -1` at read time;
+  the intermediate versions stay visible in the local reflog.
+- **Purpose of this round:** repair the centrally verified false/stale
+  documentation claims — HISTORY.md git bullet (M1), HISTORY.md
+  chronology (M2), the A4 "not created or exported" wording in both A4
+  files (M3), `misc/INVENTORY.md` D8/D9 (M6/M5), the A3 rulebook bullet
+  and its Sources line (M7), the HISTORY.md assumption block and the A4
+  chronology narrative (M8) — and restore the missing presence assertion
+  in verifier check (d) (M4).
+- **Result:** 8/9 checks PASS — the single FAIL is (h), by design (see
+  below); script exit code 1.
+- **Measured state at that run:** `origin/main` ==
+  `cd95afa5a375acb157ec2756468bf740f5d290f6` — unchanged, nothing was
+  pushed by this session; check (i) PASS (`origin/main` is an ancestor of
+  the local `HEAD`); the local `main` is **1 commit ahead** of
+  `origin/main` (unpushed); the working tree shows exactly one entry —
+  the repository owner's untracked note `temp.txt`.
+- **Why (h) FAILs — by design, not a defect:** the owner's untracked note
+  `temp.txt` (199 B) is deliberately left in place by this session — it is
+  not deleted, not committed and not git-ignored — so `git status
+  --porcelain` is not empty and check (h) reports FAIL. Every other check
+  is green, including (d) (the canonical layout is intact) and (i) (no
+  push, fast-forward history).
+- **Check-set change since Run 5:** only check (d) changed — it now also
+  asserts the *presence* of every expected canonical folder
+  (`a3_sem_rule_change_analysis`, `a4_problem_understanding_and_model`,
+  `a6_system_model_v2`). Before the repair a deleted canonical folder was
+  silently accepted and (d) still reported PASS (reproduced in a
+  throwaway copy: deleting `assignments/a6_system_model_v2` yielded 9/9
+  PASS); after the repair the same deletion is reported as `missing
+  canonical folder 'a6_system_model_v2'`. Checks (a), (b), (c), (e), (f),
+  (g), (h) and (i) are unchanged — still exactly 9 checks.
+- **Transparency note:** the script was re-run after the amend described
+  above with the identical result — 8/9 PASS, the single (h) FAIL by
+  design.
+- **Scope note:** this round changed documentation text only, plus the
+  (d) block of `misc/verify_repo.sh`; no assignment deliverable, no
+  README.md, no AGENTS.md, no asset and no model file was touched.
+
 ## Intentionally open gap (documented, NOT a failure)
 
 The A4 SysML model file `MBSE_A4_Never_Settlers_model.sysml` is **not**

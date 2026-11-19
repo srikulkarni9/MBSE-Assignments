@@ -104,9 +104,13 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
   it is the same model revision the A4 PDF refers to. *(medium — the file
   exists and matches the described structure; the identity with the A4
   PDF's model revision is not proven)*
-- No dedicated Shell Eco-marathon rulebook PDF exists in the repo; the
-  analysis had to work from the sources it cites. *(high —
-  `misc/INVENTORY.md` §3.2)*
+- At analysis time no complete rulebook was available in the repo; the
+  analysis worked from the sources it cites. The owner has since added the
+  official 2027 Chapter I PDF locally (`course_material/shell_eco/`,
+  `misc/INVENTORY.md` §3.2/D14), but the complete rulebook is still not in
+  the repo (remaining volumes such as Chapters II/IV are absent) — so a
+  real rules check against the complete authoritative rule set remains
+  open. *(high — `misc/INVENTORY.md` §3.2)*
 - The **whole PDF** is AI-generated (disclaimer printed next to the prompt
   line) — not only the 2027 column — so a real rules check against
   authoritative sources is still open for all three seasons (and
@@ -121,8 +125,9 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
 - `assignments/a4_problem_understanding_and_model/MBSE_A4_Never_Settlers.pdf`
   — cross-references ("A3 comparison" as evidence for CR-3/CR-4/CR-7, "the
   A3 model", U-1). *(high)*
-- `misc/INVENTORY.md` §3 — documented gaps (no model file, no rulebook
-  PDF, AI disclaimer). *(high)*
+- `misc/INVENTORY.md` §3 — documented gaps and their current state (the A4
+  SysML model is still missing; the complete SEM rulebook is not in the
+  repo — 2027 Chapter I is available locally; AI disclaimer). *(high)*
 - `assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`
   — the owner's model export (textual SysML v2), consolidated into this
   folder on 2026-11-19; Git blob SHA `ffcb5f6cba788e4a3c43ffcef43f2502222878a5`,

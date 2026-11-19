@@ -12,8 +12,8 @@ states at the end of section 1 (Stakeholder expectations):
 > "Model text: `MBSE_A4_Never_Settlers_model.sysml`, Part A."
 
 So the model text exists as a described artifact — but the file itself was
-never exported into this repository. As of 2026-11-19 the A4 model has not
-been created or exported yet and is absent from the repository; the
+never exported into this repository. As of 2026-11-19 the A4 model
+has not been exported into the repository and is absent from the repository; the
 machine-wide scan claim of 2026-11-18 ("no `.sysml`, `.sysmlx`, `.xmi` or
 `.kerml` file exists anywhere on this machine") is superseded — the
 repository does contain the A3 model

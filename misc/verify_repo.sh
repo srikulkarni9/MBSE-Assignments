@@ -79,6 +79,15 @@ while IFS= read -r entry; do
 done <<EOF
 $assign_entries
 EOF
+# presence assertion: every expected canonical folder must actually be there
+while IFS= read -r expected_entry; do
+  [ -n "$expected_entry" ] || continue
+  if ! printf '%s\n' "$assign_entries" | grep -qxF -- "$expected_entry"; then
+    d_problems="${d_problems}missing canonical folder '${expected_entry}'; "
+  fi
+done <<EOF
+$assign_expected
+EOF
 if [ -z "$d_problems" ]; then
   pass "(d) assignments/ contains exactly the 3 group-assignment folders (a3_sem_rule_change_analysis, a4_problem_understanding_and_model, a6_system_model_v2); every name matches a<n>_<slug> without spaces and has an assignment.md"
 else
