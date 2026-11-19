@@ -8,8 +8,8 @@ invented ever enters the repo.
 
 - Run / date: 2026-11-18 (initial inventory) and 2026-11-19 (consolidation
   round after the repository owner's commit `d63ce6f`; review-findings
-  repair round `2ec3bda`; history-truthfulness and self-record round —
-  this round), session `lightning_122`, agent
+  repair round `2ec3bda`; history-truthfulness and self-record round;
+  final-review closure round — this round), session `lightning_122`, agent
   `lightning_122_worker_agent`
 - Working tree: `/home/edgar/vs_code/MBSE-Assignments` (branch `main`)
 - Originals outside the repo (in `~/Downloads` and in
@@ -233,3 +233,13 @@ class, event details and verification gaps are listed in
   complete rule set is present. The three open decisions — event, vehicle
   category and energy class — are documented in `README.md` and in the A6
   contract (Open section).
+  **Relevance verdict (2026-11-19): the stored Chapter I is relevant and in
+  active use.** It is the authoritative local rules baseline for this
+  group's rule-change-focused SEM vehicle modelling (the model has to stay
+  compliant while the rules change — A4 goal G-07 / objective O-08), and the
+  A4 rule-change analysis builds its CR-1…CR-7 lower bound directly on it.
+  That lower bound is an honest one: the full 2026-vs-2027 diff was not
+  possible and the 2027 Chapter IV was not readable at analysis time. For the
+  Chapter I scope the relevance question is therefore answered conclusively;
+  acquiring the remaining chapters stays a team task, already tracked in
+  `README.md` (Known gaps item 2) and in the A6 contract (Open section).

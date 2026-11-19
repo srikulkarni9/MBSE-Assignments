@@ -116,6 +116,11 @@ is reconstructed from the delivered PDF's own title and structure.)*
 - `assignments/a3_sem_rule_change_analysis/MBSE_A3_Never_Settlers_SEM_Analysis.pdf`
   — cited by the A4 PDF as evidence (CR-3, CR-4, CR-7) and as prior work
   ("the A3 model", `ElectricalEnergySystem`). *(high)*
+- `course_material/shell_eco/Shell Eco-marathon 2027 Official Rules, Chapter I - shell-eco-marathon-2027-official-rules-chapter-one.pdf`
+  — the main readable 2027 rule source read for the rule-change analysis:
+  the CR-1…CR-7 lower bound is built on it; the full 2026-vs-2027 diff was
+  not possible and the 2027 Chapter IV was not readable at analysis time.
+  *(high)*
 - `misc/INVENTORY.md` §3.1 and §4 D7 — model-file gap and the
   `.sysml`-stays-in-Git decision. *(high)*
 - Git history: `92e94b5` (PDF copied into this folder from the local

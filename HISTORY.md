@@ -31,6 +31,7 @@ the state changes.
 | 2026-11-19 02:32:42 CET | Repository owner pushed `cd95afa` to `origin/main` under `edgar <166285592+EdiDorner@users.noreply.github.com>` (the same identity as his pushes at 19:37:23 and 00:52:33); evidence: raw remote reflog `.git/logs/refs/remotes/origin/main` ("update by push d63ce6f -> cd95afa") and the owner's untracked note `temp.txt`. | raw remote reflog; `temp.txt` | high |
 | 2026-11-19 | Review-findings repair round — one commit `2ec3bda` (parent `cd95afa`), **no push**: the 8 verified review findings M1-M8 repaired across 7 files (truth/staleness fixes in `HISTORY.md`, `misc/INVENTORY.md`, the A3 and A4 assignment files; the check-(d) presence assertion restored in `misc/verify_repo.sh`; `misc/VERIFICATION.md` Run 6) | `2ec3bda`; `misc/VERIFICATION.md` run 6 | high |
 | 2026-11-19 | History-truthfulness and self-record round — this commit (parent `2ec3bda`), **no push**: the two remaining present-tense `origin/main` claims of the chronology converted to dated past tense (the 2026-11-18 19:37 CET row and the 2026-11-19 00:52 CET row); the review-findings repair round and this round recorded here; the Current-status heading extended; the `misc/INVENTORY.md` run/date line extended; re-verification run 7 appended to `misc/VERIFICATION.md` | parent: `2ec3bda`; this commit = `git log --oneline -1`; `misc/VERIFICATION.md` run 7 | high |
+| 2026-11-19 | Final-review closure round — this commit (parent `01d3f08`), **no push**: the one closable critical of the final review (the still unanswered relevance of the stored Shell Eco-marathon PDF) is closed with a conclusive, dated verdict — added inside README Known gaps item 2 and mirrored in `misc/INVENTORY.md` §4 D14; one Sources bullet for the local 2027 Chapter I PDF added to the A4 `assignment.md`; re-verification run 8 appended to `misc/VERIFICATION.md` | parent: `01d3f08`; this commit = `git log --oneline -1`; `misc/VERIFICATION.md` run 8 | high |
 
 ## Assumption on record (not a fact)
 
@@ -47,7 +48,7 @@ the state changes.
   the group. Source: `misc/INVENTORY.md` §3 (gaps 1–3); user message of
   2026-11-18.
 
-## Current status (as of 2026-11-19, after the consolidation commit cd95afa + review-findings repair 2ec3bda + this history truthfulness/self-record fix)
+## Current status (as of 2026-11-19, after the consolidation commit cd95afa + review-findings repair 2ec3bda + the history truthfulness/self-record fix 01d3f08 + this final-review closure round)
 
 - **A3:** analysis PDF is in the repo; whether it is the delivered group
   result or provided material is not provable from the file alone — both

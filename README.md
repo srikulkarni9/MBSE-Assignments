@@ -149,6 +149,16 @@ repo) as orientation. One further NASA reference lives next to it in
    *not* in this repository. A6 works from the local Chapter I and the
    official 2027 Chapter IV; the event-specific Chapter II parameters remain
    open. See [the A6 contract](assignments/a6_system_model_v2/assignment.md#open).
+   **Relevance verdict (2026-11-19): the stored Chapter I is relevant and in
+   active use.** It is the authoritative local rules baseline for this
+   group's rule-change-focused SEM vehicle modelling (the model has to stay
+   compliant while the rules change — A4 goal G-07 / objective O-08), and the
+   A4 rule-change analysis builds its CR-1…CR-7 lower bound directly on it.
+   That lower bound is an honest one: the full 2026-vs-2027 diff was not
+   possible and the 2027 Chapter IV was not readable at analysis time. For the
+   Chapter I scope the relevance question is therefore answered conclusively;
+   acquiring the remaining chapters stays a team task, already tracked above
+   and in [the A6 contract](assignments/a6_system_model_v2/assignment.md#open).
 3. The whole A3 PDF is AI-generated: the disclaimer "AI generated content
    using Gemini AI" is printed in the PDF directly next to the prompt line
    ("Comparison of rule/regulation changes between 2025 Vs 2026 Vs 2027"),
