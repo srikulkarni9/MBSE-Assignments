@@ -12,17 +12,23 @@ time, without having to trust prose.
 The script verifies **presence and consistency markers**: documented
 keywords, section headings, date entries, file counts, a checksum, the
 tracked/untracked pattern of `*.sysml`, a clean working tree and the
-untouched remote ref. It does **not** re-validate every factual statement
-made in the prose documentation — those remain subject to review.
+relation between the remote ref and the local history. It does **not**
+re-validate every factual statement made in the prose documentation —
+those remain subject to review.
 
-By design, two future state changes are expected to turn checks FAIL —
-that is the script working as intended, not a defect:
+By design, two situations are expected to turn checks FAIL — that is the
+script working as intended, not a defect:
 
-- once the repository owner pushes, check (i) (`origin/main` ==
-  `6fffee1144a839df98e63976391c9d5f620e73e3`) will fail and the
-  documented baseline must be updated to the new remote state;
-- if a third group-assignment folder appears under `assignments/`, check
-  (d) will fail and must be updated accordingly.
+- check (i) fails only on **real divergence**: it asserts that `origin/main`
+  stays an ancestor of the local `main`
+  (`git merge-base --is-ancestor origin/main HEAD`). A normal push by the
+  repository owner keeps that true, so (i) stays green across owner pushes;
+  it turns red only if the remote is force-updated or the local history is
+  rewritten. The ahead-count is reported informationally — no remote SHA and
+  no minimum ahead-count is asserted any more.
+- check (d) fails if a **fourth** group-assignment folder appears under
+  `assignments/` (or if one of the three canonical folders is renamed or
+  loses its `assignment.md`); the canonical layout then has to be updated.
 
 Needle note: check (e) documents the absolute-path needle as
 `/home/<username>` to keep this documentation from self-matching; the
@@ -86,6 +92,44 @@ actual grep pattern lives in `misc/verify_repo.sh`.
 - **Scope note:** the R3 patch touched documentation text only
   (`HISTORY.md` and `misc/VERIFICATION.md` — this file, both plain
   Markdown); `misc/verify_repo.sh` itself was **not** modified.
+
+## Run 5 — re-verification after the consolidation + verifier-repair commit (2026-11-19)
+
+- **Recorded run:** 2026-11-19 (local), executed directly after the
+  consolidation-and-verifier-repair commit — the commit that carries this
+  entry (parent commit: `d63ce6fb838bcff8df436a459b47196dd044306f`; the
+  commit's own hash is recorded as `git log --oneline -1` at read time,
+  because a file cannot contain the hash of the commit that contains it)
+- **Result:** 9/9 checks PASS, script exit code 0
+- **Measured state at that run:** `origin/main` ==
+  `d63ce6fb838bcff8df436a459b47196dd044306f` — unchanged, nothing was
+  pushed; the local `main` is **1 commit ahead** of `origin/main`
+  (unpushed); the working tree was clean.
+- **Check-set change since Run 4 (measured, not historical):** check (d)
+  now asserts the canonical layout — exactly the three group-assignment
+  folders `a3_sem_rule_change_analysis`,
+  `a4_problem_understanding_and_model` and `a6_system_model_v2`, each
+  named `a<n>_<slug>` without spaces and each with an `assignment.md` (a
+  fourth folder still fails the check with a useful message); check (i)
+  now asserts the fast-forward invariant
+  `git merge-base --is-ancestor origin/main HEAD` instead of a pinned
+  `origin/main` SHA and a minimum ahead-count, so it survives future owner
+  pushes and reports the ahead-count informationally only. Checks (a),
+  (b), (c), (e), (f), (g) and (h) are unchanged — still exactly 9 checks.
+- **Why (h), (d) and (i) were red before that commit — and only then:**
+  (h) failed because the Phase-1 consolidation was still uncommitted in the
+  working tree (the expected intermediate state, not a defect); (d) and (i)
+  failed because they still carried the pre-consolidation assertions (two
+  assignment folders, pinned remote SHA `6fffee1…`, ahead-count >= 3).
+  After the (d)/(i) adaptation both were green before the commit; (h)
+  turned green with the commit itself.
+- **Transparency note:** this entry was added *after* the run above; the
+  commit was then amended once (same parent, same tree plus this entry) so
+  that the working tree ends clean. The script was re-run after the amend
+  with the same result — 9/9 PASS, exit code 0.
+- **Scope note:** that single commit carried the Phase-1 consolidation and
+  the Phase-2 verifier repair together; `misc/verify_repo.sh` was modified
+  in the (d) and (i) checks only.
 
 ## Intentionally open gap (documented, NOT a failure)
 

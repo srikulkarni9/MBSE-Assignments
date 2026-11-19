@@ -32,11 +32,14 @@ then open the box and show how its internal functions work together.
   driving, autonomous disengagement and emergency propulsion isolation.
   The SysML v2 Pilot Implementation 0.62.0 reported zero syntax errors,
   semantic errors and warnings for this file.
-- **A3 model available** *(high)* — The downloaded text export defines the
+- **A3 model available** *(high)* — The A3 text export defines the
   autonomous vehicle and six parts for perception, autonomous control, vehicle
   motion, safety, electrical energy and the vehicle platform. It provides the
-  starting structure for modelling the functions and exchanges.
-  [A3 model export](../MBSE_A3_System_model_Autonomous%20Driving_Never_Settlers/Autonomous_Vehicle_Never_Settlers_model%20file)
+  starting structure for modelling the functions and exchanges. It is stored
+  at the canonical A3 path
+  `assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`
+  next to its PNG and SVG renderings.
+  [A3 model export](../a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml)
 - **A3 and A4 analysis available** *(high)* — A4 records the stakeholder need,
   goals, measurable objectives and open rule questions. A3 supplies an
   AI-generated rule comparison that can flag candidates for review.
@@ -66,10 +69,15 @@ then open the box and show how its internal functions work together.
   Slide 62 discusses requirement applicability. Slides 64–65 describe the
   A5 cheat-sheet exercise. [Repository copy of an A5 cheat sheet](../../misc/NASA_MBSE_a5_Cheat_Sheet1.pdf)
 - *(high for artifact contents)* [A3 rule comparison](../a3_sem_rule_change_analysis/MBSE_A3_Never_Settlers_SEM_Analysis.pdf),
-  [downloaded A3 model export](../MBSE_A3_System_model_Autonomous%20Driving_Never_Settlers/Autonomous_Vehicle_Never_Settlers_model%20file),
+  [downloaded A3 model export](../a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml),
   and [A4 problem analysis](../a4_problem_understanding_and_model/MBSE_A4_Never_Settlers.pdf).
 - *(high for rule text)* [Official SEM 2027 Chapter IV and previous seasons](https://www.shellecomarathon.com/about/global-rules.html)
   and [local 2027 Chapter I](../../course_material/shell_eco/Shell%20Eco-marathon%202027%20Official%20Rules%2C%20Chapter%20I%20-%20shell-eco-marathon-2027-official-rules-chapter-one.pdf).
-- *(high for artifact existence)* [Internal A6 discussion draft](../MBSE_A3_System_model_Autonomous%20Driving_Never_Settlers/MBSE_A6_Never_Settlers.pdf).
-  Reviewed for candidate concepts and flows. The resulting baseline follows
-  the publisher's rules where applicable.
+- *(high that it existed and was reviewed; removed from the repository on
+  owner decision, 2026-11-19)* An internal A6 discussion draft — a
+  colleague's worked-out solution — was reviewed for candidate concepts and
+  flows and is cited as source [8] in the A6 report. The file was removed
+  from this repository on owner decision of 2026-11-19 as obsolete, so it is
+  no longer part of the documented repo state; it remains retrievable in Git
+  history at commit `d63ce6f`. The resulting baseline follows the
+  publisher's rules where applicable.

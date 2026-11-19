@@ -97,10 +97,16 @@ is reconstructed from the delivered PDF's own title and structure.)*
 - **Missing model file:** `MBSE_A4_Never_Settlers_model.sysml`, referenced
   in section 1 of the PDF ("Model text: …, Part A"), does not exist in the
   repo — never exported; the working assumption is that it exists only
-  inside kotar.app (assumption, not proven — no `.sysml`/`.sysmlx`/`.xmi`/
-  `.kerml` file exists anywhere on this machine, `misc/INVENTORY.md`
-  §3.1). Export instructions: `model/README.md`. *(high that it is
-  missing; the "only in kotar.app" part is an assumption)*
+  inside kotar.app (assumption, not proven). As of 2026-11-19 the A4 model
+  has not been created or exported yet and is absent from the repository;
+  the machine-wide scan claim of 2026-11-18 ("no `.sysml`/`.sysmlx`/`.xmi`/
+  `.kerml` file exists anywhere on this machine") is superseded — the
+  repository does contain the A3 model
+  (`assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`)
+  and the A6 model
+  (`assignments/a6_system_model_v2/model/MBSE_A6_Never_Settlers.sysml`),
+  see `misc/INVENTORY.md` §3.1. Export instructions: `model/README.md`.
+  *(high that it is missing; the "only in kotar.app" part is an assumption)*
 
 ## Sources
 

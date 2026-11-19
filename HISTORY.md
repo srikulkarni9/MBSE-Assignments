@@ -25,6 +25,8 @@ the state changes.
 | 2026-11-18 (evening) | Patch round R3 — robust-status fix: the stale hard ahead-count written in R1 (left stale when R2 updated only the section heading) removed from the Current-status Git bullet and replaced by a robust formulation that stays true after every future commit ("several commits" plus the live counter command `git rev-list --count origin/main..HEAD`, snapshot 6 as of commit `3ac349c`); section heading extended with the R3 fix; re-verification run 4 appended to `misc/VERIFICATION.md` — no push | parent: `3ac349c`; this commit = `git log --oneline -1`; `misc/VERIFICATION.md` run 4 | high |
 | 2026-11-18 | Created the A6 folder and documented the team task, submission instructions and existing project inputs. | [A6 assignment brief](assignments/a6_system_model_v2/assignment.md), based on Session 5, slides 52 and 54 | high |
 | 2026-11-18 | Prepared the A6 submission document and SysML v2 export, including the common working baseline, external exchanges and three functional flows. Official 2027 Chapter IV informs the ADC baseline. | [A6 report](assignments/a6_system_model_v2/MBSE_A6_Never_Settlers.pdf), [A6 model](assignments/a6_system_model_v2/model/MBSE_A6_Never_Settlers.sysml) | high |
+| 2026-11-19 00:52 CET | Repository owner commit `d63ce6f` "initial folder structure & assignment 6" (author and committer `edgar <166285592+EdiDorner@users.noreply.github.com>`): the A6 folder with the submission document and the SysML v2 model, the local 2027 Chapter I rulebook, the A3 model export with its PNG/SVG renderings **and a second copy of the A3 SEM analysis PDF**, the internal A6 discussion draft, and the removal of `misc/NASA_MBSE_a5_human_ai.pdf`. The owner produced A6 during the team pause to meet the slide-52 deadline of 18 November 2026 and sorted the new files together with another agent (context in the owner's chat log with that agent, kept outside this repository). The owner pushed this commit themselves — `origin/main` points at it. | git log `d63ce6f`; owner chat log | high |
+| 2026-11-19 | Consolidation phase 1 — cleanup after the owner's commit `d63ce6f`, **no push**: the A3 model export and its PNG/SVG renderings moved byte-identically (`git mv`, Git blob SHAs unchanged) to the canonical path `assignments/a3_sem_rule_change_analysis/model/`; the legacy folder with spaces in its name removed; the byte-identical duplicate A3 SEM analysis PDF removed after an md5 identity check against the canonical copy; the obsolete 231 kB internal A6 discussion draft removed on the owner's explicit order; the three legacy links in the A6 contract repaired (two retargeted to the canonical A3 path, the dead draft link replaced by a truthful provenance note); README, AGENTS, HISTORY and INVENTORY updated to the new state — no assignment folder with spaces, no duplicated A3 PDF, A6 deliverables byte-identical. | this consolidation round; `git log`; md5 sums | high |
 
 ## Assumption on record (not a fact)
 
@@ -36,26 +38,32 @@ the state changes.
   confirmed by the group. Source: `misc/INVENTORY.md` §3 (gaps 1–3);
   user message of 2026-11-18.
 
-## Current status (as of 2026-11-18, after commit 4739c9d and the R1 documentation patch + R2 truthfulness fix + R3 robust-status fix)
+## Current status (as of 2026-11-19, after the Phase-1 consolidation)
 
 - **A3:** analysis PDF is in the repo; whether it is the delivered group
   result or provided material is not provable from the file alone — both
   readings documented in `assignments/a3_sem_rule_change_analysis/assignment.md`.
   The whole PDF is AI-generated (disclaimer next to the prompt line) and is
-  treated as an unverified draft.
+  treated as an unverified draft. The **A3 SysML model file is in the repo**
+  at the canonical path
+  `assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`
+  (textual SysML v2 export with its PNG and SVG renderings).
 - **A4:** analysis PDF is in the repo and documented as the group's own
   submission/analysis document (reading D11, medium confidence); the SysML
   model file is **missing** (never exported) — export guide in
   `assignments/a4_problem_understanding_and_model/model/README.md`.
 - **A6:** [submission document and SysML v2 model](assignments/a6_system_model_v2/assignment.md#delivered)
-  prepared for team submission.
+  prepared for team submission; the three open decisions (event, vehicle
+  category, energy class) are documented in `README.md` and in the contract.
 - **A1/A2/A5:** no artifacts on this machine; no folders invented
   (`misc/INVENTORY.md` §4 D2).
-- **Git:** local `main` is ahead of `origin/main` (`6fffee1`) by several
-  commits; exact count: `git rev-list --count origin/main..HEAD`
-  (6 as of commit `3ac349c`); **no push performed** — the repository
-  owner pushes personally.
+- **Git:** local `main` and `origin/main` are both at the owner's commit
+  `d63ce6f` ("initial folder structure & assignment 6", 2026-11-19 00:52
+  CET) — the owner pushed that commit personally. The consolidation work
+  of this round is **not committed yet**; the number of unpushed local
+  commits is `git rev-list --count origin/main..HEAD` (0 as of commit
+  `d63ce6f`). **No push performed** — the repository owner pushes personally.
 - **Open gaps:** see `misc/INVENTORY.md` §3 and the Open sections of the
-  two `assignment.md` files. The documented repo state can be re-verified
+  `assignment.md` files. The documented repo state can be re-verified
   at any time with `bash misc/verify_repo.sh`
   (`misc/VERIFICATION.md`).

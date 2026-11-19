@@ -1,7 +1,8 @@
 # Assignment A3 — SEM rule-change analysis
 
 Folder: `assignments/a3_sem_rule_change_analysis/`
-Files in this folder: `MBSE_A3_Never_Settlers_SEM_Analysis.pdf`
+Files in this folder: `MBSE_A3_Never_Settlers_SEM_Analysis.pdf`,
+`model/` (the A3 model file and its PNG/SVG renderings)
 
 > Confidence legend used in this file:
 > **high** = directly evidenced by a file in this repo or by its metadata ·
@@ -21,9 +22,10 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
   for rule changes. *(medium — the A4 PDF cites "A3 comparison" as evidence
   for CR-3, CR-4 and CR-7)*
 - Deliver a SysML v2 model element set (the A4 PDF refers to "the A3
-  model", which contains an `ElectricalEnergySystem`). *(medium —
-  referenced by the A4 PDF; no A3 model file exists in the repo, so this
-  cannot be verified)*
+  model", which contains an `ElectricalEnergySystem`). *(high — the A3
+  model file is in the repo at
+  `assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`
+  and does define an `ElectricalEnergySystem`)*
 
 ## Delivered
 
@@ -58,6 +60,15 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
   alike), not only the 2027 column; the entire A3 document is an
   **unverified draft**, not authoritative rule text. *(high — printed in
   the PDF itself; see also `misc/INVENTORY.md` §3.3)*
+- `model/MBSE_A3_Never_Settlers_model.sysml` — the A3 SysML v2 model as a
+  textual export: one view exposing the vehicle and its six logical parts
+  (perception, autonomous control, vehicle motion, safety, electrical
+  energy, vehicle platform). *(high — file inspected 2026-11-19)* The
+  renderings of the same model sit next to it as
+  `model/MBSE_A3_Never_Settlers_model.png` and `…_model.svg`. The export
+  is a raw tool export — it carries no requirements, no allocations and no
+  functional flows; the requirement baseline and the functional analysis
+  live in the A6 model (`misc/INVENTORY.md` §3 gap 4).
 - File metadata: created 2026-10-26 16:36 CET, author field "sridhar
   kulkarni", Microsoft Word for Microsoft 365. *(high — `pdfinfo`)*
 - Uploaded to the GitHub repository on 2026-11-16 by account srikulkarni9
@@ -86,9 +97,13 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
 - The original A3 assignment sheet (task text) is not in the repo — the
   Required section above is a reconstruction. *(high that it is missing)*
 - The "A3 model" referenced by the A4 PDF (SysML v2, contains an
-  `ElectricalEnergySystem`) has no file in the repo — unknown whether it
-  was ever exported or exists only inside a modelling tool. *(medium —
-  gap; `misc/INVENTORY.md` §3.1 verified no model file on this machine)*
+  `ElectricalEnergySystem`) is now in the repo — the owner's textual export
+  `assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`
+  defines the vehicle and the six logical parts, including
+  `ElectricalEnergySystem`. What cannot be proven from the files is whether
+  it is the same model revision the A4 PDF refers to. *(medium — the file
+  exists and matches the described structure; the identity with the A4
+  PDF's model revision is not proven)*
 - No dedicated Shell Eco-marathon rulebook PDF exists in the repo; the
   analysis had to work from the sources it cites. *(high —
   `misc/INVENTORY.md` §3.2)*
@@ -108,5 +123,9 @@ is a reconstruction from indirect evidence. Nothing here is proven.)*
   A3 model", U-1). *(high)*
 - `misc/INVENTORY.md` §3 — documented gaps (no model file, no rulebook
   PDF, AI disclaimer). *(high)*
+- `assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`
+  — the owner's model export (textual SysML v2), consolidated into this
+  folder on 2026-11-19; Git blob SHA `ffcb5f6cba788e4a3c43ffcef43f2502222878a5`,
+  unchanged since commit `d63ce6f`. *(high)*
 - Git history: `49589aa` (upload), `92e94b5` (git mv into this folder).
   *(high)*

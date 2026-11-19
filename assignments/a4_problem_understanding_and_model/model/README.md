@@ -12,9 +12,15 @@ states at the end of section 1 (Stakeholder expectations):
 > "Model text: `MBSE_A4_Never_Settlers_model.sysml`, Part A."
 
 So the model text exists as a described artifact — but the file itself was
-never exported into this repository. Verified 2026-11-18: no `.sysml`,
-`.sysmlx`, `.xmi` or `.kerml` file exists anywhere on this machine
-(`misc/INVENTORY.md` §3.1). The working assumption is that the model was
+never exported into this repository. As of 2026-11-19 the A4 model has not
+been created or exported yet and is absent from the repository; the
+machine-wide scan claim of 2026-11-18 ("no `.sysml`, `.sysmlx`, `.xmi` or
+`.kerml` file exists anywhere on this machine") is superseded — the
+repository does contain the A3 model
+(`assignments/a3_sem_rule_change_analysis/model/MBSE_A3_Never_Settlers_model.sysml`)
+and the A6 model
+(`assignments/a6_system_model_v2/model/MBSE_A6_Never_Settlers.sysml`),
+see `misc/INVENTORY.md` §3.1. The working assumption is that the model was
 created inside a modelling tool and never left it — presumably it exists
 only inside kotar.app (assumption, not proven).
 

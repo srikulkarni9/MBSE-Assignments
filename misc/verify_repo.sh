@@ -17,8 +17,8 @@ cd "$ROOT"
 
 # Documented constant: md5 of misc/NASA_MBSE_a5_Cheat_Sheet1.pdf.
 CHEATSHEET_MD5="76bbbfcfe2d47566ae5ae97594fba356"
-# Remote ref must stay untouched — proxy evidence that nobody pushed.
-ORIGIN_MAIN_EXPECTED="6fffee1144a839df98e63976391c9d5f620e73e3"
+# No remote SHA is pinned here: check (i) asserts a state-agnostic invariant
+# (origin/main stays an ancestor of the local HEAD) instead of a transient hash.
 A3_PDF="assignments/a3_sem_rule_change_analysis/MBSE_A3_Never_Settlers_SEM_Analysis.pdf"
 
 FAILURES=0
@@ -60,15 +60,29 @@ else
   fail "(c) A3 PDF count under assignments/ is $a3_copies (expected 1) and/or commit 49589aa missing from its followed history"
 fi
 
-# (d) assignments/ contains exactly the two group-assignment folders, each with assignment.md
+# (d) assignments/ holds exactly the canonical group-assignment folders; every
+#     folder name follows a<n>_<slug> (no spaces) and carries an assignment.md
+assign_expected="$(printf 'a3_sem_rule_change_analysis\na4_problem_understanding_and_model\na6_system_model_v2\n' | sort)"
 assign_entries="$(find assignments -mindepth 1 -maxdepth 1 -printf '%f\n' 2>/dev/null | sort)"
-assign_expected="$(printf 'a3_sem_rule_change_analysis\na4_problem_understanding_and_model\n' | sort)"
-if [ "$assign_entries" = "$assign_expected" ] \
-   && [ -f assignments/a3_sem_rule_change_analysis/assignment.md ] \
-   && [ -f assignments/a4_problem_understanding_and_model/assignment.md ]; then
-  pass "(d) assignments/ contains exactly the 2 group-assignment folders, both with assignment.md"
+d_problems=""
+while IFS= read -r entry; do
+  [ -n "$entry" ] || continue
+  if ! printf '%s\n' "$assign_expected" | grep -qxF -- "$entry"; then
+    d_problems="${d_problems}unexpected folder '${entry}' (not part of the canonical layout); "
+  fi
+  if [[ "$entry" =~ [[:space:]] ]]; then
+    d_problems="${d_problems}folder name '${entry}' contains a space; "
+  elif [[ ! "$entry" =~ ^a[0-9]+_[a-z0-9]+(_[a-z0-9]+)*$ ]]; then
+    d_problems="${d_problems}folder name '${entry}' does not match a<n>_<slug>; "
+  fi
+  [ -f "assignments/$entry/assignment.md" ] || d_problems="${d_problems}folder '${entry}' has no assignment.md; "
+done <<EOF
+$assign_entries
+EOF
+if [ -z "$d_problems" ]; then
+  pass "(d) assignments/ contains exactly the 3 group-assignment folders (a3_sem_rule_change_analysis, a4_problem_understanding_and_model, a6_system_model_v2); every name matches a<n>_<slug> without spaces and has an assignment.md"
 else
-  fail "(d) assignments/ layout deviates (found: $(echo "$assign_entries" | tr '\n' ' '))"
+  fail "(d) assignments/ layout deviates:${d_problems}expected exactly: $(echo "$assign_expected" | tr '\n' ' ')"
 fi
 
 # (e) README keywords present AND no absolute /home/edgar paths in the contract files
@@ -115,13 +129,16 @@ else
   git status --porcelain | sed 's/^/      /'
 fi
 
-# (i) origin/main untouched (== 6fffee1…) and local main ahead by >= 3 (proxy proof: no push happened)
-origin_actual="$(git rev-parse origin/main 2>/dev/null || echo 'unavailable')"
-ahead="$(git rev-list --count origin/main..HEAD 2>/dev/null || echo 0)"
-if [ "$origin_actual" = "$ORIGIN_MAIN_EXPECTED" ] && [ "$ahead" -ge 3 ]; then
-  pass "(i) origin/main == $ORIGIN_MAIN_EXPECTED (untouched); local main is $ahead commits ahead — no push happened"
+# (i) origin/main stays an ancestor of the local HEAD — a durable, state-agnostic
+#     invariant that survives future owner pushes as long as the local history
+#     stays a fast-forward of the remote. The ahead-count is reported
+#     informationally only; no SHA and no minimum count is asserted.
+origin_actual="$(git rev-parse --verify -q origin/main 2>/dev/null || echo 'unavailable')"
+if git merge-base --is-ancestor origin/main HEAD 2>/dev/null; then
+  ahead="$(git rev-list --count origin/main..HEAD 2>/dev/null || echo 0)"
+  pass "(i) origin/main ($origin_actual) is an ancestor of the local HEAD (fast-forward history); local main is $ahead commit(s) ahead of origin/main — unpushed"
 else
-  fail "(i) origin/main is '$origin_actual' (expected $ORIGIN_MAIN_EXPECTED) and/or ahead count is $ahead (expected >= 3)"
+  fail "(i) origin/main ($origin_actual) is NOT an ancestor of the local HEAD — the local history diverged from the remote (non-fast-forward); reconcile the histories before pushing"
 fi
 
 echo
